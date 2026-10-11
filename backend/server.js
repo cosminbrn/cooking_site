@@ -1,12 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const User = require('./models/User');
 const Recipe = require('./models/Recipe');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = 'amongus';
+const JWT_SECRET = process.env.JWT_SECRET;
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const path = require('path');
@@ -231,7 +232,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-mongoose.connect('mongodb+srv://cosminbaroana06:JaJK8NuLCziLf0H6@cluster0.nfmul.mongodb.net/node-API?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server is listening on port ${PORT}`);
