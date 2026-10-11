@@ -2,7 +2,8 @@
 
 A full-stack recipe-sharing app where users can sign up, publish recipes with photos, and rate and review each other's dishes.
 
-<!-- Add 2–3 screenshots or a GIF here, e.g. ![Home](docs/home.png) -->
+![Home](docs/home.png)
+![Register](docs/register.png)
 
 ## Features
 
